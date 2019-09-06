@@ -1,0 +1,19 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Course project for the NodeJS Bootcamp course on Udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarbun/natours.git"
+  },
+  "author": "Arjun B (@jarbun)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarbun/natours/issues"
+  },
+  "homepage": "https://github.com/jarbun/natours#readme"
+}
