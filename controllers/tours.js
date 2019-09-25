@@ -27,7 +27,19 @@ exports.getAllTours = async (req, res) => {
     let newQuery = JSON.stringify(queryObj);
     newQuery = JSON.parse(newQuery.replace(/\b(gte|gt|lte|lt)\b/g, match => '$' + match));
     // Build query
-    const query = Tour.find(newQuery);
+    let query = Tour.find(newQuery);
+
+    // Sorting
+    if (req.query.sort) {
+      // Replaces 'a,b' with 'a b'
+      // a is primary, ties are broken using b
+      const sortBy = req.query.sort.split(',').join(' ');
+      query = query.sort(sortBy);
+    } else {
+      // Default sort by latest first
+      query = query.sort('-createdAt');
+    }
+
     // Execute query
     const tours = await query;
 
